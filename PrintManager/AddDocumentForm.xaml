@@ -1,0 +1,26 @@
+﻿<Window x:Class="PrintManager.AddDocumentForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrintManager"
+        mc:Ignorable="d"
+        Title="Новый документ" Height="175.427" Width="363.968">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:PrintManagerCommands.CreateDoc" Executed="CreateDoc_Executed" CanExecute="CreateDoc_CanExecute"></CommandBinding>
+    </Window.CommandBindings>
+    <Grid Margin="0,0,15,16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="106*"/>
+            <ColumnDefinition Width="235*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="159.624,99,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="BtnCancel_Click"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="48.624,99,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Command="local:PrintManagerCommands.CreateDoc"/>
+        <Label Content="Наименование" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Время печати" HorizontalAlignment="Left" Margin="37.624,10,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="docName" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="printTime" HorizontalAlignment="Left" Height="23" Margin="38,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Grid.Column="1"
+                 PreviewTextInput="PrintTime_PreviewTextInput"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="PrintManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrintManager"
+        mc:Ignorable="d"
+        Title="Менеджер печати" Height="302" Width="636">
+    <Grid>
+        <Button x:Name="btnStart" Content="Старт" HorizontalAlignment="Left" Margin="18,22,0,0" VerticalAlignment="Top" Width="174" Click="BtnStart_Click"/>
+        <Button x:Name="btnStop" Content="Стоп" HorizontalAlignment="Left" Margin="18,47,0,0" VerticalAlignment="Top" Width="174" Click="BtnStop_Click" IsEnabled="False"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="18,72,0,0" VerticalAlignment="Top" Width="174" Click="BtnAdd_Click"/>
+        <Button x:Name="btnCancel" Content="Отменить" HorizontalAlignment="Left" Margin="18,97,0,0" VerticalAlignment="Top" Width="174" Click="BtnCancel_Click"/>
+        <Button Content="Среднее время печати" HorizontalAlignment="Left" Margin="18,122,0,0" VerticalAlignment="Top" Width="174" Click="BtnAvgPrintTime_Click"/>
+        <Button Content="Напечатанные документы" HorizontalAlignment="Left" Margin="18,147,0,0" VerticalAlignment="Top" Width="174" Click="BtnDocsInfo_Click"/>
+
+        <DataGrid x:Name="docList" HorizontalAlignment="Left" Height="198" Margin="210,24,0,0" VerticalAlignment="Top" Width="395" IsReadOnly="True" AutoGenerateColumns="False" CanUserSortColumns="False">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время печати" Binding="{Binding PrintTime}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
